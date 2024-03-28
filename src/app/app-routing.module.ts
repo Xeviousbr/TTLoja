@@ -1,15 +1,19 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { HomePage } from './home/home.page';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'folder/Inbox',
-    pathMatch: 'full'
+    component: HomePage    
   },
   {
-    path: 'folder/:id',
-    loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
+    path: 'painel',
+    loadChildren: () => import('./painel/painel.module').then( m => m.PainelPageModule)
+  },
+  {
+    path: 'venda',
+    loadChildren: () => import('./venda/venda.module').then( m => m.VendaPageModule)
   }
 ];
 
